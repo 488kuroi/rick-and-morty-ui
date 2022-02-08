@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+      "baseUrl": ".",
+      "paths": {
+        "@src/*"                : [ "src/*" ],
+        "@components"           : [ "src/components/index.ts" ],
+        "@partials"             : [ "src/partials/index.ts" ],
+        "@assets/*"             : [ "src/assets/*" ],
+        "@themes"               : [ "src/assets/themes/index.ts" ],
+        "@images/*"             : [ "src/assets/images/*" ],
+        "@videos/*"             : [ "src/assets/videos/*" ],
+        "@pages"                : [ "src/pages/index.ts" ],
+        "@routes"               : [ "src/routing/index.ts" ],
+        "@store/*"              : [ "src/store/*" ],
+        "@reducers"             : [ "src/store/reducers/index.ts" ],
+        "@middlewares/*"        : [ "src/store/middlewares/*" ],
+        "@features/*"           : [ "src/store/features/*" ],
+        "@models"               : [ "src/store/models/index.ts" ],
+        "@selectors"            : [ "src/store/selectors/index.ts" ],
+        "@core/*"               : [ "src/core/*" ],
+        "@services/*"           : [ "src/core/services/*" ],
+        "@http"                 : [ "src/core/services/http/index.ts" ],
+        "@utils"                : [ "src/core/utils/index.ts" ],
+        "@credentialsmanager"   : [ "src/core/utils/credentialsmanager/index.ts" ],
+        "@repositories/*"       : [ "src/core/repositories/*" ],
+        "@translations/*"       : [ "src/translations/*" ],
+        "@mocks"                : [ "src/assets/mocks/index.ts" ]
+      }
+    }
+  }
