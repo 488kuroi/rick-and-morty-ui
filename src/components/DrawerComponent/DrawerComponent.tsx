@@ -1,18 +1,25 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { toggleDrawer } from '@features/drawer/drawer.slice';
-
+import { FC, useState, useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useTranslation } from 'react-i18next';
 import clsx from 'clsx';
+
+import { toggleDrawer } from '@features/drawer/drawer.slice';
+import { selectDrawer } from '@selectors'
+
 import { makeStyles } from '@material-ui/core/styles';
+import { useStyles as commonStyles } from '@pages'
 
 import {
 	Drawer,
 	IconButton,
+	MenuList,
+	MenuItem,
+	Link,
 } from '@material-ui/core';
 
 import { MenuOutlined } from '@mui/icons-material';
 
-const drawerWidth = 360;
+const drawerWidth = 250;
 
 const useStyles = makeStyles((theme) => ({
 	drawer: {
@@ -23,13 +30,7 @@ const useStyles = makeStyles((theme) => ({
 	paper: {
 		backgroundColor: 'transparent!important',
 		border: 'none',
-		'&:before': {
-			content: '""',
-			position: 'absolute',
-			height: '100%',
-			width: '1px',
-			boxShadow: '-18px -60vh 154px 17px #FFF',
-		}
+		marginTop: theme.spacing(15),
 	},
 	drawerOpen: {
 		width: drawerWidth,
@@ -44,30 +45,39 @@ const useStyles = makeStyles((theme) => ({
 			duration: theme.transitions.duration.leavingScreen,
 		}),
 		overflowX: 'hidden',
-		width: theme.spacing(7) + 1,
-		[theme.breakpoints.up('sm')]: {
-			width: theme.spacing(9) + 1,
-		}
-		
+		width: 0,
 	},
 	drawerContent: {
-		padding: theme.spacing(2, 0, 0, 2),
+		padding: theme.spacing(25, 0, 0, 2),
+	},
+	menuItems: {
+		textAlign: 'right',
+		padding: theme.spacing(2.5, 5, 2.5, 5),
 	}
 }));
 
 
-function DrawerContentSettings() {
+interface DrawerComponentProps { }
+
+const DrawerComponent: FC<DrawerComponentProps> = () => {
 
 	const classes = useStyles();
-	const dispatch = useDispatch();
+	const commonClasses = commonStyles();
+	const DRAWER = useSelector(selectDrawer);
+	const { t } = useTranslation('common');
+	const MENU: Array<any> = t('menu', { returnObjects: true });
 	const [isOpen, setIsOpen] = useState<boolean>(false);
 
+	useEffect(() => {
+		setIsOpen(DRAWER.isOpen);
+	}, [DRAWER.isOpen] )
+
+
 	return (
-		<div className={`Drawer`}>
+		<div data-testid="DrawerComponent" className={`Drawer`}>
 			<Drawer
+				variant='permanent'
 				anchor={`right`}
-				variant="permanent"
-				onClose={() => dispatch(toggleDrawer(isOpen))}
 				className={clsx(classes.drawer, {
 					[classes.drawerOpen]: isOpen,
 					[classes.drawerClose]: !isOpen,
@@ -81,9 +91,18 @@ function DrawerContentSettings() {
 			>
 
 				<div className={classes.drawerContent}>
-					<IconButton onClick={() => setIsOpen(!isOpen)}>
-						<MenuOutlined />
-					</IconButton>
+					
+					<MenuList>
+						{
+							MENU.map((item: any, item_i: number) => (
+								<MenuItem key={`menu_item_${item_i}`} className={`${commonClasses.justEnd} ${classes.menuItems}`}>
+									<Link href={item.path} color="inherit">
+										{item.label}
+									</Link>
+								</MenuItem>
+							))
+						}
+					</MenuList>
 				</div>
 
 			</Drawer>
@@ -92,5 +111,7 @@ function DrawerContentSettings() {
 
 }
 
-export default DrawerContentSettings;
+export default DrawerComponent;
+
+
 

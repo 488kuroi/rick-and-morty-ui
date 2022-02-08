@@ -1,10 +1,11 @@
-import HeroVideoComponent from "./hero-video/hero-video.component";
+import HeroVideoComponent from "./HeroVideoComponent/HeroVideoComponent.lazy";
 
 // COMMON
-import DrawerComponent from "./drawer/drawer.component";
-import ModalComponent from "./modal/modal.component";
-import FallBackLogoComponent from "./fallback-logo/fallback-logo.component";
-import FooterComponent from "./footer/footer.component";
+import DrawerComponent from "./DrawerComponent/DrawerComponent.lazy";
+import ModalComponent from "./ModalComponent/ModalComponent.lazy";
+import FallBackLogoComponent from "./FallBackLogoComponent/FallBackLogoComponent";
+import HeaderComponent from "./HeaderComponent/HeaderComponent.lazy";
+import FooterComponent from "./FooterComponent/FooterComponent.lazy";
 
 
 export {
@@ -13,5 +14,6 @@ export {
   DrawerComponent,
   ModalComponent,
   FallBackLogoComponent,
+  HeaderComponent,
   FooterComponent,
 }

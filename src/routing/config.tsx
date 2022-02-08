@@ -23,13 +23,31 @@ export interface IRoute {
 export const routes: IRoute[] = [
   {
     path: "/",
-    component: lazy(() => import('../pages/index-page/index.page')),
+    component: lazy(() => import('../pages/IndexPage/IndexPage')),
     exact: true,
     fallback: <FallBackLogoComponent />,
   },
   {
     path: "/index",
-    component: lazy(() => import('../pages/index-page/index.page')),
+    component: lazy(() => import('../pages/IndexPage/IndexPage')),
+    exact: true,
+    fallback: <FallBackLogoComponent />,
+  },
+  {
+    path: "/locations",
+    component: lazy(() => import('../pages/LocationsPage/LocationsPage')),
+    exact: true,
+    fallback: <FallBackLogoComponent />,
+  },
+  {
+    path: "/characters",
+    component: lazy(() => import('../pages/CharactersPage/CharactersPage')),
+    exact: true,
+    fallback: <FallBackLogoComponent />,
+  },
+  {
+    path: "/episodes",
+    component: lazy(() => import('../pages/EpisodesPage/EpisodesPage')),
     exact: true,
     fallback: <FallBackLogoComponent />,
   },

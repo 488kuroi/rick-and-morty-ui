@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: ITheme) =>
       justifyContent: 'start'
     },
     justBetween: {
-      justifyContent: 'between'
+      justifyContent: 'space-between'
     },
     alignCenter: {
       alignItems: 'center'

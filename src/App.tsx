@@ -12,7 +12,7 @@ import LinearProgress from '@material-ui/core/LinearProgress';
 
 import { useStyles } from '@pages';
 
-import { ModalComponent, DrawerComponent, FooterComponent } from '@components'
+import { ModalComponent, DrawerComponent, HeaderComponent, FooterComponent } from '@components'
 
 
 function App() {
@@ -39,6 +39,8 @@ function App() {
       <Router >
 
         <div className={`App App_${DARK_MODE.isDark ? 'dark' : 'light'} ${classes.AppContainer}`}>
+
+          <HeaderComponent />
 
           <DrawerComponent />
 

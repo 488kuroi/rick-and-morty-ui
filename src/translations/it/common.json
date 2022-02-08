@@ -1,4 +1,18 @@
 {
+  "menu": [
+    {
+      "label": "Personaggi",
+      "path": "characters"
+    },
+    {
+      "label": "Località",
+      "path": "locations"
+    },
+    {
+      "label": "Episodi",
+      "path": "episodes"
+    }
+  ],
   "footer": {
     "text": "Made by: Federico Salani",
     "link": "https://www.linkedin.com/in/federico-giorgio-salani/",

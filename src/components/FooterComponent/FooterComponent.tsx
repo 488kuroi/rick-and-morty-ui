@@ -1,3 +1,5 @@
+import React, { FC } from 'react';
+
 import { useTranslation } from "react-i18next";
 import { makeStyles } from '@material-ui/core';
 
@@ -27,14 +29,16 @@ const useStyles = makeStyles((theme: ITheme) => ({
 }));
 
 
-function FooterComponent() {
+interface FooterComponentProps {}
+
+const FooterComponent: FC<FooterComponentProps> = () => {
 
   const { t } = useTranslation('common');
   const classes = useStyles();
   const commonClasses = CommonStyles();
 
   return (
-    <div className={`Footer ${commonClasses.dFlex} ${commonClasses.flexRow} ${commonClasses.alignCenter} ${commonClasses.justStart} ${classes.footer}`}>
+    <div data-testid="FooterComponent" className={`Footer ${commonClasses.dFlex} ${commonClasses.flexRow} ${commonClasses.alignCenter} ${commonClasses.justStart} ${classes.footer}`}>
       <Typography variant="body2">{t('footer.text')}</Typography>
       <IconButton className={`${classes.iconButtons}`} href={t('footer.link')}>
         <AccountBoxOutlined />
@@ -46,5 +50,4 @@ function FooterComponent() {
   )
 }
 
-
-export default FooterComponent
+export default FooterComponent;

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { FC } from 'react';
+
 import { MODAL } from '@models';
 import { Typography, Modal } from '@material-ui/core';
 import { HighlightOff } from '@material-ui/icons';
@@ -81,17 +82,19 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-const ModalComponent = () => {
+
+interface ModalComponentProps { }
+
+const ModalComponent: FC<ModalComponentProps> = () => {
 
   const dispatch = useDispatch();
   const classes = useStyles();
   const modalData: MODAL.Modal = useSelector(selectModal);
   const rootRef = React.useRef<HTMLDivElement>(null);
 
-
   return (
-
     <Modal
+      data-testid="ModalComponent"
       open={modalData.isOpen}
       onClose={() => dispatch(closeModal)}
       aria-labelledby="simple-modal-title"
@@ -139,14 +142,14 @@ const ModalComponent = () => {
             </div>
           }
 
-          
+
         </div>
 
       </div>
     </Modal>
   )
 
-}
 
+};
 
 export default ModalComponent;
