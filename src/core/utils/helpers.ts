@@ -29,8 +29,6 @@ export async function* asyncGenerator( yieldFunction: any ): any {
           // maxPages = 0;
         });
       
-      console.log( toYield )
-      
       maxPages = toYield?.info?.pages;
       page++;
     } finally {
@@ -41,9 +39,11 @@ export async function* asyncGenerator( yieldFunction: any ): any {
 
 export async function loadTableData( yieldFunction: any, formatter: any, setter: Function, cb: Function|null) {
   store.dispatch(showLoader('showLine'))
+
+
   for await (let res of asyncGenerator( yieldFunction )) {
     if (res) {
-      setter( ( prevData: Array<any> ) => [ ...prevData, ...(res?.results || []) ] )
+      setter( ( prevData: Array<any> ) => [ ...prevData, ...formatter(res?.results || []) ] )
     }
   }
   store.dispatch(hideAllLoaders())

@@ -1,6 +1,7 @@
 
 export interface TableComponentProps {
-  columns: Array<any>,
-  data: Array<any>,
-  apiFunction: any,
+  formatter: Function,
+  headings: Array<any>,
+  repository: string,
+  action: string,
 }

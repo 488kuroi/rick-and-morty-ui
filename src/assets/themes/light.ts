@@ -2,11 +2,9 @@ import { createTheme } from "@material-ui/core/styles";
 import createPalette from "@material-ui/core/styles/createPalette";
 
 import { IPalette, IThemeOptions} from './index'
-import { COMMON_OVERRIDES } from './common.overrides'
 
 
 const theme = createTheme({
-  overrides: COMMON_OVERRIDES,
   typography: {
     allVariants: {
       color: "#333"

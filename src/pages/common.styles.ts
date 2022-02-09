@@ -60,48 +60,23 @@ const useStyles = makeStyles((theme: ITheme) =>
         backgroundPosition: 'center center',
         backgroundRepeat: 'no-repeat',
         backgroundImage: `url(${process.env.PUBLIC_URL + '/images/page-bg.png'})`,
+        '&:not( .Page_index )': {
+          padding: theme.spacing(20, 10, 10),
+        }
       }
     },
-    table: {
-      minWidth: 750,
-      maxWidth: '100%',
-    },
-    totalRows: {
-      backgroundColor: theme.palette.primary.main,
-      '& .MuiTableCell-root': {
-        color: theme.palette.common.white,
-        fontWeight: 'bold'
+    tableActions: {
+      dispaly: 'flex',
+      alignItems: 'center',
+      justifyContent: 'start',
+      flexDirection: 'row',
+      '& .MuiTypography-root': {
+        display: 'inline-block',
+        width: '90px',
+      },
+      '& .MuiButtonBase-root': {
+        marginRight: theme.spacing( 2 ),
       }
-      
-    },
-    hiddenScrollXtable: {
-      '& .MuiTableContainer-root': {
-        overflowX: 'hidden',
-      }
-    },
-    evenGrey: {
-      "&:nth-of-type(even)": {
-        // backgroundColor: (theme.palette.background as any).lightGrey,
-      },
-    },
-    headCell: {
-      "& .MuiCheckbox-root": {
-        color: theme.palette.primary.main,
-      },
-    },
-    highlight: {
-      color: theme.palette.primary.main + "!important",
-      backgroundColor: lighten(theme.palette.primary.main, 0.85) + "!important",
-    },
-    highlight_dark: {
-      color: theme.palette.text.primary,
-      backgroundColor: theme.palette.common.black,
-      "& > .MuiTableCell-root": {
-        backgroundColor: theme.palette.common.black,
-      },
-    },
-    checkboxes_dark: {
-      color: theme.palette.common.white,
     },
   })
 );

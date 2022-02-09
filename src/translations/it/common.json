@@ -13,6 +13,12 @@
       "path": "/episodes"
     }
   ],
+  "tables": {
+    "actions": "Azioni disponibili",
+    "name": "Nome",
+    "dimension": "Dimensione",
+    "type": "Tipo"
+  },
   "footer": {
     "text": "Made by: Federico Salani",
     "link": "https://www.linkedin.com/in/federico-giorgio-salani/",
