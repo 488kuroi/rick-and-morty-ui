@@ -9,6 +9,7 @@ interface IPalette extends Palette {
 }
 interface ITheme extends Theme {
   palette: IPalette;
+  link?: any;
 }
 interface IThemeOptions extends ThemeOptions {
   palette: IPalette;

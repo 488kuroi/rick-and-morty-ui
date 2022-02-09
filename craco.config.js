@@ -20,6 +20,7 @@ module.exports = {
         '@models'              : path.resolve(__dirname, 'src/store/models/index.ts' ),
         '@selectors'           : path.resolve(__dirname, 'src/store/selectors/index.ts' ),
         '@core'                : path.resolve(__dirname, 'src/core/*' ),
+        '@interfaces'          : path.resolve(__dirname, 'src/core/interfaces/index.ts' ),
         '@services'            : path.resolve(__dirname, 'src/core/services/*' ),
         '@http'                : path.resolve(__dirname, 'src/core/services/http/index.ts' ),
         '@utils'               : path.resolve(__dirname, 'src/core/utils/index.ts' ),

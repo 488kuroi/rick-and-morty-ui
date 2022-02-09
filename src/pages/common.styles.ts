@@ -54,6 +54,12 @@ const useStyles = makeStyles((theme: ITheme) =>
       },
       '& .Footer': {
         marginTop: 'auto',
+      },
+      '& .Page': {
+        flexGrow: 1,
+        backgroundPosition: 'center center',
+        backgroundRepeat: 'no-repeat',
+        backgroundImage: `url(${process.env.PUBLIC_URL + '/images/page-bg.png'})`,
       }
     },
     table: {

@@ -1,27 +1,23 @@
 import { FC, useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import clsx from 'clsx';
 
-import { toggleDrawer } from '@features/drawer/drawer.slice';
 import { selectDrawer } from '@selectors'
-
+import { ITheme } from '@themes';
 import { makeStyles } from '@material-ui/core/styles';
 import { useStyles as commonStyles } from '@pages'
 
 import {
 	Drawer,
-	IconButton,
 	MenuList,
 	MenuItem,
-	Link,
 } from '@material-ui/core';
-
-import { MenuOutlined } from '@mui/icons-material';
 
 const drawerWidth = 250;
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme: ITheme) => ({
 	drawer: {
 		width: drawerWidth,
 		flexShrink: 0,
@@ -53,6 +49,9 @@ const useStyles = makeStyles((theme) => ({
 	menuItems: {
 		textAlign: 'right',
 		padding: theme.spacing(2.5, 5, 2.5, 5),
+		'& a': {
+			color: theme.link.color,
+		}
 	}
 }));
 
@@ -96,7 +95,7 @@ const DrawerComponent: FC<DrawerComponentProps> = () => {
 						{
 							MENU.map((item: any, item_i: number) => (
 								<MenuItem key={`menu_item_${item_i}`} className={`${commonClasses.justEnd} ${classes.menuItems}`}>
-									<Link href={item.path} color="inherit">
+									<Link to={ item.path} color="inherit">
 										{item.label}
 									</Link>
 								</MenuItem>

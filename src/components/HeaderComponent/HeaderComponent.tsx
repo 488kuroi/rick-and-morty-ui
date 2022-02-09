@@ -17,6 +17,7 @@ import {
 } from '@mui/icons-material';
 
 import Logo from '@images/backgrounds/logo.png';
+import { Link } from 'react-router-dom';
 
 
 const useStyles = makeStyles((theme: ITheme) => ({
@@ -50,7 +51,9 @@ const HeaderComponent: FC<HeaderComponentProps> = () => {
       className={` Header ${commonClasses.dFlex} ${commonClasses.alignStart} ${commonClasses.flexRow} ${commonClasses.justBetween} ${classes.header}`}
     >
 
-      <img className={classes.logo} src={Logo} alt="logo" />
+      <Link to={`/`}>
+        <img className={classes.logo} src={Logo} alt="logo" />
+      </Link>
       <IconButton onClick={() => onToggleClick( !DRAWER.isOpen ) }>
         <MenuOutlined />
       </IconButton>

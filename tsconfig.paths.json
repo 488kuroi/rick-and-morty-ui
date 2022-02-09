@@ -18,6 +18,7 @@
         "@models"               : [ "src/store/models/index.ts" ],
         "@selectors"            : [ "src/store/selectors/index.ts" ],
         "@core/*"               : [ "src/core/*" ],
+        "@interfaces/*"         : [ "src/core/interfaces/index.ts" ],
         "@services/*"           : [ "src/core/services/*" ],
         "@http"                 : [ "src/core/services/http/index.ts" ],
         "@utils"                : [ "src/core/utils/index.ts" ],

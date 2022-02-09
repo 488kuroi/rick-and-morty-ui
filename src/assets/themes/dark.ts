@@ -12,22 +12,22 @@ const theme = createTheme({
       color: "#FFF"
     },
   },
+  link: {
+    color: '#FFF',
+  },
   buttons: {
     color: 'red'
   },
   palette: createPalette({
     type: 'dark',
     primary: {
-      // light: will be calculated from palette.primary.main,
       main: '#ff4400',
-      // dark: will be calculated from palette.primary.main,
-      // contrastText: will be calculated to contrast with palette.primary.main
+      contrastText: '#FFF'
     },
     secondary: {
       light: '#d64f9f',
       main: '#ed008c',
-      // dark: will be calculated from palette.secondary.main,
-      contrastText: '#ffcc00',
+      contrastText: '#FFF'
     },
     background: {
       default: '#1f1f1f',

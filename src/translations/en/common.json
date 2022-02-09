@@ -2,15 +2,15 @@
   "menu": [
     {
       "label": "Personaggi",
-      "path": "characters"
+      "path": "/characters"
     },
     {
       "label": "Località",
-      "path": "locations"
+      "path": "/locations"
     },
     {
       "label": "Episodi",
-      "path": "episodes"
+      "path": "/episodes"
     }
   ],
   "footer": {

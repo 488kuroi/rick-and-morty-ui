@@ -9,15 +9,15 @@ const app = express();
 var port = process.env.PORT || 9000;
 
 const rewriteFn = function (path, req) {
-  return path.replace("/api", "");
+  return path.replace(ENV.REACT_APP_API_FAKE_URL, "");
 };
 
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "../build")));
 
 app.use(
-  "/api",
-  createProxyMiddleware("/api", {
+  ENV.REACT_APP_API_FAKE_URL,
+  createProxyMiddleware(ENV.REACT_APP_API_FAKE_URL, {
     target: ENV.REACT_APP_API_BASE_URL,
     changeOrigin: true,
     headers: {
