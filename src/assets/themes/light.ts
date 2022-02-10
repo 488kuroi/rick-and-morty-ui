@@ -15,8 +15,7 @@ const theme = createTheme({
   },
   palette: createPalette({
     primary: {
-      // light: will be calculated from palette.primary.main,
-      main: '#ff4400',
+      main: '#8ffe09',
       contrastText: '#FFF'
     },
     secondary: {
@@ -24,9 +23,9 @@ const theme = createTheme({
       main: '#ed008c',
       contrastText: '#FFF'
     },
-    background: {
-      default: '#dedede',
-      paper: '#FFF',
+    error: {
+      light: '#f7b008',
+      main: '#8b0000',
     },
     footer: {
       border: '#333'

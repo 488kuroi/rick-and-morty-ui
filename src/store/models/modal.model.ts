@@ -6,7 +6,8 @@ export interface Modal {
   subTitle?: string;
   text?: string;
   modalStatus?: string;
-  customData?: any;
+  data?: any;
+  type?: string;
 }
 
 export const initialState: Modal = {

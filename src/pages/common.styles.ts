@@ -61,18 +61,18 @@ const useStyles = makeStyles((theme: ITheme) =>
         backgroundRepeat: 'no-repeat',
         backgroundImage: `url(${process.env.PUBLIC_URL + '/images/page-bg.png'})`,
         '&:not( .Page_index )': {
-          padding: theme.spacing(20, 10, 10),
+          padding: theme.spacing(25, 10, 10),
         }
       }
     },
     tableActions: {
-      dispaly: 'flex',
+      display: 'flex',
       alignItems: 'center',
       justifyContent: 'start',
       flexDirection: 'row',
       '& .MuiTypography-root': {
         display: 'inline-block',
-        width: '90px',
+        width: '155px',
       },
       '& .MuiButtonBase-root': {
         marginRight: theme.spacing( 2 ),

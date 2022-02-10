@@ -5,3 +5,7 @@ export interface TableComponentProps {
   repository: string,
   action: string,
 }
+
+export interface CardPartialProps {
+  data?: any,
+}

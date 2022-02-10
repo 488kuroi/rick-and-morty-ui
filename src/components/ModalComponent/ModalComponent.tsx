@@ -1,14 +1,20 @@
 import React, { FC } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { MODAL } from '@models';
-import { Typography, Modal } from '@material-ui/core';
-import { HighlightOff } from '@material-ui/icons';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
-import { useDispatch, useSelector } from 'react-redux';
 import { selectModal } from '@selectors'
 import { closeModal } from '@store/features/modal/modal.slice';
 
 import parse from 'html-react-parser';
+
+import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+
+import {
+  Typography,
+  Modal,
+} from '@material-ui/core';
+
+import { HighlightOff } from '@material-ui/icons';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -44,7 +50,7 @@ const useStyles = makeStyles((theme: Theme) =>
     wrapper: {
       position: 'relative',
       height: '100%',
-      width: 'calc( 100% + 50px )',
+      width: 'calc( 100% + 25px )',
       overflowY: 'scroll',
       overflowX: 'hidden',
       maxHeight: '80vh',
@@ -61,6 +67,30 @@ const useStyles = makeStyles((theme: Theme) =>
         opacity: 0.7
       }
     },
+    subtitle: {
+      marginTop: theme.spacing( 1.5 ),
+    },
+    content: {
+      '& .delete_people_list': {
+        listStyle: 'none',
+        padding: theme.spacing(2, 0, 0),
+      }
+    },
+    single_card_modal: {
+      paddingTop: theme.spacing(1.5),
+      display: 'flex',
+      alignItems: 'start',
+      justifyContent: 'space-evenly',
+      flexDirection: 'row',
+      flexWrap: 'wrap',
+      
+    },
+    card_modal: {
+      '& > div': {
+        width: '30%',
+        marginBottom: theme.spacing( 5 ),
+      }
+    },
     border_neutral: {
       borderColor: theme.palette.primary.main,
     },
@@ -68,17 +98,12 @@ const useStyles = makeStyles((theme: Theme) =>
       borderColor: theme.palette.secondary.main,
     },
     border_warning: {
-      borderColor: (theme.palette.common as any).kem_yellow,
+      borderColor: theme.palette.error.light,
     },
     border_error: {
       borderColor: theme.palette.error.main,
     },
-    content: {
-      '& .delete_people_list': {
-        listStyle: 'none',
-        padding: theme.spacing(2, 0, 0),
-      }
-    }
+    
   }),
 );
 
@@ -115,7 +140,7 @@ const ModalComponent: FC<ModalComponentProps> = () => {
 
           {
             modalData?.title &&
-            <div className={modalData.hasOwnProperty('subTitle') ? 'mb-2' : 'mb-4'}>
+            <div>
               <Typography variant="h4">
                 {parse(modalData.title)}
               </Typography>
@@ -124,14 +149,14 @@ const ModalComponent: FC<ModalComponentProps> = () => {
 
           {
             modalData?.subTitle &&
-            <div className="mb-4">
+            <div className={classes.subtitle}>
               <Typography variant="h5">
                 {parse(modalData.subTitle)}
               </Typography>
             </div>
           }
 
-          <hr className="mb-4" />
+          <hr />
 
           {
             modalData?.text &&
@@ -139,6 +164,13 @@ const ModalComponent: FC<ModalComponentProps> = () => {
               <Typography variant="body1">
                 {parse(modalData.text)}
               </Typography>
+            </div>
+          }
+
+          {
+            ((modalData?.type === 'card_modal' || modalData?.type === 'single_card_modal') && modalData?.data) &&
+            <div className={`${classes.single_card_modal} ${modalData?.type === 'card_modal' ? classes.card_modal : {} }`}>
+              {modalData?.data}
             </div>
           }
 

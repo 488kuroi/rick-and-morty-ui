@@ -19,13 +19,17 @@ const theme = createTheme({
   palette: createPalette({
     type: 'dark',
     primary: {
-      main: '#ff4400',
+      main: '#8ffe09',
       contrastText: '#FFF'
     },
     secondary: {
       light: '#d64f9f',
       main: '#ed008c',
       contrastText: '#FFF'
+    },
+    error: {
+      light: '#f7b008',
+      main: '#8b0000',
     },
     background: {
       default: '#1f1f1f',

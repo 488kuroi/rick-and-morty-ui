@@ -13,15 +13,48 @@
       "path": "/episodes"
     }
   ],
-  "tables": {
-    "actions": "Available actions",
-    "name": "Name",
-    "dimension": "Dimension",
-    "type": "Type"
+    
+  "modals": {
+    "single_location": {
+      "title": "Location",
+      "subTitle": "A detail of the selected location"
+    },
+    "single_character": {
+      "title": "Character",
+      "subTitle": "A detail of the selected character"
+    },
+    "multiple_characters": {
+      "title": "Characters",
+      "subTitle": "A detail of the selected characters"
+    },
+    "multiple_episodes": {
+      "title": "Episodes",
+      "subTitle": "A detail of the selected episodes"
+    }
   },
   "footer": {
     "text": "Made by: Federico Salani",
     "link": "https://www.linkedin.com/in/federico-giorgio-salani/",
     "email": "488kuroi@gmail.com"
-  }
+  },
+  "id": "ID number",
+  "actions": "Available actions",
+  "name": "Name",
+  "dimension": "Dimension",
+  "type": "Type",
+  "residents": "Residents",
+  "gender": "Gender",
+  "species": "Species",
+  "origin": "Origin",
+  "location": "Location",
+  "episodes_presence": "Episodes in which it is present",
+  "residentsCount": "Show {{residentsCount}} residents",
+  "episodesCount": "Show {{episodesCount}} episodes",
+  "no_episodes": "There are no episodes",
+  "no_residents": "There are no residents",
+  "location_before_and_after": "Location Origin/Current",
+  "physical_details": "Physical details",
+  "status": "Status",
+  "episode": "Episode",
+  "characters_involved_num": "Number of characters involved"
 }

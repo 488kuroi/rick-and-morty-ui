@@ -13,15 +13,47 @@
       "path": "/episodes"
     }
   ],
-  "tables": {
-    "actions": "Azioni disponibili",
-    "name": "Nome",
-    "dimension": "Dimensione",
-    "type": "Tipo"
+  "modals": {
+    "single_location": {
+      "title": "Località",
+      "subTitle": "Un dettaglio sulla località selezionata"
+    },
+    "single_character": {
+      "title": "Personaggio",
+      "subTitle": "Un dettaglio sul personaggio selezionato"
+    },
+    "multiple_characters": {
+      "title": "Personaggi",
+      "subTitle": "Un dettaglio sui personaggi selezionati"
+    },
+    "multiple_episodes": {
+      "title": "Episodi",
+      "subTitle": "Un dettaglio sugli episodi selezionati"
+    }
   },
   "footer": {
     "text": "Made by: Federico Salani",
     "link": "https://www.linkedin.com/in/federico-giorgio-salani/",
     "email": "488kuroi@gmail.com"
-  }
+  },
+  "id": "Identificativo",
+  "actions": "Azioni disponibili",
+  "name": "Nome",
+  "dimension": "Dimensione",
+  "type": "Tipo",
+  "residents": "Residenti",
+  "gender": "Genere",
+  "species": "Specie",
+  "origin": "Origine",
+  "location": "Località",
+  "episodes_presence": "Episodi nei quali è presente",
+  "residentsCount": "Mostra {{residentsCount}} residenti",
+  "no_residents": "Non ci sono residenti",
+  "episodesCount": "Mostra {{episodesCount}} episodi",
+  "no_episodes": "Non ci sono episodi",
+  "location_before_and_after": "Località Origine/Attuale",
+  "physical_details": "Dettagli fisici",
+  "status": "Stato",
+  "episode": "Episodio",
+  "characters_involved_num": "Numero di personaggi coinvolti"
 }
