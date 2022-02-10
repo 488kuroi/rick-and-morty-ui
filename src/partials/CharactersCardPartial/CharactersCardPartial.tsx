@@ -49,7 +49,7 @@ const CharactersCardPartial: FC<CardPartialProps> = ({ data = null }) => {
               {t('origin')}: {data?.origin?.name || ''} - {t('species')}: {data?.species || ''} {data?.type || ''} <span style={{ marginLeft: 10 }}>{ data?.gender === 'Female' ? <Female color="primary"/> : data?.gender === 'Male' ? <Male color="secondary"/> : <Transgender color="warning"/> }</span>
           </Typography>
           <Typography variant="body2">
-            {t('dimension')}: {data?.dimension || ''} - {t('location')}: {data?.location?.name || ''}
+            {t('location')}: {data?.location?.name || ''}
           </Typography>
           <Typography variant="body2">
             {t('episodes_presence')}: {data?.episode?.length || 0}
