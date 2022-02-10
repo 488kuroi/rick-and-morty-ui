@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme: ITheme) => ({
 		whiteSpace: 'nowrap',
 	},
 	paper: {
-		backgroundColor: 'transparent!important',
+		backgroundColor: theme.palette.background.default,
 		border: 'none',
 		marginTop: theme.spacing(15),
 	},

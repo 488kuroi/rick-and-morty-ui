@@ -51,6 +51,12 @@ export const routes: IRoute[] = [
     exact: true,
     fallback: <FallBackLogoComponent />,
   },
+  {
+    path: "/*",
+    component: lazy(() => import('../pages/NotFoundPage/NotFoundPage')),
+    exact: true,
+    fallback: <FallBackLogoComponent />,
+  },
   
   
 ];

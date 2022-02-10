@@ -30,11 +30,6 @@ const CharactersCardPartial: FC<CardPartialProps> = ({ data = null }) => {
 
   return (
     <div data-testid="CharactersCardPartial">
-      {/*
-        created: "2017-12-29T18:34:37.806Z"
-        episode: (3) ['https://rickandmortyapi.com/api/episode/1', 'https://rickandmortyapi.com/api/episode/4', 'https://rickandmortyapi.com/api/episode/6']
-        url: "https://rickandmortyapi.com/api/character/179"
-      */}
       <Card>
         <CardMedia
           component="img"
@@ -51,7 +46,7 @@ const CharactersCardPartial: FC<CardPartialProps> = ({ data = null }) => {
               {t('name')}: {data?.name || ''} <CircleSharp style={{ marginLeft: 10 }} color={ data?.status === 'Alive' ? 'success' : data?.status === 'Dead' ? 'error' : 'warning' } />
           </Typography>
           <Typography variant="body2" className={`${commonClasses.dFlex} ${commonClasses.alignCenter} ${commonClasses.flexRow}`}>
-              {t('origin')}: {data?.origin?.name || ''} - {t('species')}: {data?.species || ''} {data?.type || ''} <div style={{ marginLeft: 10 }}>{ data?.gender === 'Female' ? <Female color="primary"/> : data?.gender === 'Male' ? <Male color="secondary"/> : <Transgender color="warning"/> }</div>
+              {t('origin')}: {data?.origin?.name || ''} - {t('species')}: {data?.species || ''} {data?.type || ''} <span style={{ marginLeft: 10 }}>{ data?.gender === 'Female' ? <Female color="primary"/> : data?.gender === 'Male' ? <Male color="secondary"/> : <Transgender color="warning"/> }</span>
           </Typography>
           <Typography variant="body2">
             {t('dimension')}: {data?.dimension || ''} - {t('location')}: {data?.location?.name || ''}

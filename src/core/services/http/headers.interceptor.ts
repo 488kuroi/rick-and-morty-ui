@@ -1,6 +1,3 @@
-const DEBUG =
-  process.env.REACT_APP_ENVIRONMENT === "local" ||
-  process.env.REACT_APP_ENVIRONMENT === "development";
 
 const HeadersInterceptor = (config: any) => {
   config.headers.common["Content-Type"] = "application/json";
@@ -8,10 +5,6 @@ const HeadersInterceptor = (config: any) => {
   config.headers.common["Accept"] = "application/json";
 
   // ADD HEADERS SUCH A BEARER TOKEN IF REQUIRED
-
-  if (DEBUG) {
-    console.info("Send ", JSON.stringify(config));
-  }
 
   return config;
 };
