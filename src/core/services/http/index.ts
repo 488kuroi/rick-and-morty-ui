@@ -6,7 +6,7 @@ import {
 } from "./errors.interceptor";
 import ResponseInterceptor from "./response.interceptor";
 
-const API_BASE_URL = process.env.REACT_APP_API_FAKE_URL;
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 // const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 // const DEBUG = process.env.REACT_APP_ENVIRONMENT === "development";
 
