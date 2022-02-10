@@ -1,8 +1,8 @@
-import CredentialsManager from '@src/core/utils/credentialsmanager';
+import StorageManager from '@src/core/utils/storage-manager';
 
 const STORAGE_KEY = process.env.REACT_APP_STORAGE_KEY;
 
-const OLD_LANGUAGE: Language | boolean = CredentialsManager.retrieveItem(`${STORAGE_KEY}_language`) || 'en';
+const OLD_LANGUAGE: Language | boolean = StorageManager.retrieveItem(`${STORAGE_KEY}_language`) || 'en';
 
 export interface Language {
     language : string;

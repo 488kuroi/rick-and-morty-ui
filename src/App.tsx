@@ -1,12 +1,14 @@
 
 import './App.scss';
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux';
 import { routes, Router as CustomRouter } from '@routes';
 import { ThemeProvider } from '@material-ui/core/styles';
 import { BrowserRouter as Router } from "react-router-dom";
 import { light, dark } from '@themes';
 
-import { selectLoaders, selectDarkMode } from '@store/selectors';
+import { selectLoaders, selectDarkMode, selectLanguage } from '@store/selectors';
+import { setLanguage } from '@features/language/language.slice';
 
 import LinearProgress from '@material-ui/core/LinearProgress';
 
@@ -16,9 +18,20 @@ import { ModalComponent, DrawerComponent, HeaderComponent, FooterComponent } fro
 
 
 function App() {
-  const classes = useStyles();
-  const LOADERS = useSelector(selectLoaders)
+
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   const useMountEffect = (fun: any) => useEffect(fun, []);
+   // eslint-enable-next-line react-hooks/exhaustive-deps
+   const dispatch = useDispatch();
+   const classes = useStyles();
+   const LOADERS = useSelector(selectLoaders)
+  const LANGUAGE = useSelector(selectLanguage)
   const DARK_MODE = useSelector(selectDarkMode)
+  
+ 
+   useMountEffect(() => {
+     dispatch( setLanguage( LANGUAGE.language ) )
+   } )
 
   return (
     <ThemeProvider theme={(DARK_MODE.isDark === true ? dark : light)}>

@@ -23,6 +23,10 @@
       "title": "Character",
       "subTitle": "A detail of the selected character"
     },
+    "single_episode": {
+      "title": "Episode",
+      "subTitle": "A detail of the selected episode"
+    },
     "multiple_characters": {
       "title": "Characters",
       "subTitle": "A detail of the selected characters"
@@ -50,11 +54,14 @@
   "episodes_presence": "Episodes in which it is present",
   "residentsCount": "Show {{residentsCount}} residents",
   "episodesCount": "Show {{episodesCount}} episodes",
+  "charactersCount": "Show {{charactersCount}} characters",
   "no_episodes": "There are no episodes",
   "no_residents": "There are no residents",
+  "no_characters": "There are no characters",
   "location_before_and_after": "Location Origin/Current",
   "physical_details": "Physical details",
   "status": "Status",
   "episode": "Episode",
-  "characters_involved_num": "Number of characters involved"
+  "characters_involved_num": "Number of characters involved",
+  "air_date": "Air date"
 }

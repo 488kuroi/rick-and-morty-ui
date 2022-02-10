@@ -48,7 +48,9 @@ const TableComponent: FC<TableComponentProps> = ({
 }) => {
   
   const classes = useStyles();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const useMountEffect = (fun: any) => useEffect(fun, []);
+  // eslint-enable-next-line react-hooks/exhaustive-deps
   const [data, setData] = useState<Array<any>>([]);
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
@@ -96,7 +98,7 @@ const TableComponent: FC<TableComponentProps> = ({
               .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
               .map( ( row: any, row_i: number) => {
                 return (
-                  <TableRow hover role="checkbox" tabIndex={-1} key={row.code}>
+                  <TableRow hover role="checkbox" tabIndex={-1} key={`row_${row_i}`}>
                     {headings.map( ( column: any, column_i: number ) => {
                       const value = row[column.id];
                       return (

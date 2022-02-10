@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { TableComponentProps, CardPartialProps } from '@core/interfaces';
+import { TableComponentProps } from '@core/interfaces';
 
 import LocationsRepository from '@repositories/locations';
 import CharactersRepository from '@repositories/characters';
@@ -16,7 +16,7 @@ import {
   Typography,
 } from '@material-ui/core';
 
-import { SearchOutlined, TheaterComedyOutlined } from '@mui/icons-material';
+import { SearchOutlined, PeopleAlt } from '@mui/icons-material';
 
 interface LocationsPageProps { }
 
@@ -83,7 +83,7 @@ const LocationsPage: FC<LocationsPageProps> = () => {
               {
                 residentsCount > 0 &&
                 <IconButton color="secondary" onClick={() => openCharactersModal( residentsLink )}>
-                  <TheaterComedyOutlined />
+                  <PeopleAlt />
                 </IconButton>
               }
             </>

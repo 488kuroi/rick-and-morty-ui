@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { DARK_MODE } from '@models';
-import CredentialsManager from '@src/core/utils/credentialsmanager';
+import StorageManager from '@src/core/utils/storage-manager';
 const STORAGE_KEY = process.env.REACT_APP_STORAGE_KEY;
 
 export const darkModeSlice = createSlice({
@@ -11,21 +11,21 @@ export const darkModeSlice = createSlice({
       const newState = {
         isDark: true
       };
-      CredentialsManager.storeItem(`${STORAGE_KEY}_darkMode`, newState);
+      StorageManager.storeItem(`${STORAGE_KEY}_darkMode`, newState);
       return newState;
     },
     setIsLight: state => {
       const newState = {
         isDark: false
       };
-      CredentialsManager.storeItem(`${STORAGE_KEY}_darkMode`, newState);
+      StorageManager.storeItem(`${STORAGE_KEY}_darkMode`, newState);
       return newState;
     },
     toggleDark: (state, payload) => {
       const newState = {
         isDark: payload.payload
       };
-      CredentialsManager.storeItem(`${STORAGE_KEY}_darkMode`, newState);
+      StorageManager.storeItem(`${STORAGE_KEY}_darkMode`, newState);
       return newState;
     }
   }

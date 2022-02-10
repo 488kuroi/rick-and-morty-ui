@@ -1,5 +1,3 @@
-
-
 const DEBUG =
   process.env.REACT_APP_ENVIRONMENT === "local" ||
   process.env.REACT_APP_ENVIRONMENT === "development";

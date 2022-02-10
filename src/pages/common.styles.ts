@@ -1,6 +1,5 @@
 import {
   createStyles,
-  lighten,
   makeStyles,
 } from "@material-ui/core/styles";
 

@@ -4,7 +4,7 @@ const STORAGE_KEY = process.env.REACT_APP_STORAGE_KEY;
 const salt =
   process.env.REACT_APP_SALT || "6c090785-ecdf-11eb-adc1-0242ac120004";
 
-const CredentialsManager = {
+const StorageManager = {
   storeItem: function (key: any, data: any, encrypt: boolean = true) {
     let value = data;
     if (encrypt) {
@@ -49,4 +49,4 @@ const CredentialsManager = {
   },
 };
 
-export default CredentialsManager;
+export default StorageManager;

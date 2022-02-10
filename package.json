@@ -82,13 +82,13 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "_start": "react-scripts start",
-    "start": "node server/index.js",
-    "dev": "craco start",
-    "_build": "react-scripts build",
+    "node:server": "node server/index.js",
+    "serve": "serve -s build -p 3000",
+    "_start": "node server/index.js",
+    "start:build": "npm-run-all --parallel \"node:server\" \"serve\"",
+    "start": "craco start",
     "build": "craco build --verbose",
     "build:dev": "env-cmd -f .env.development craco build",
-    "build:stage": "env-cmd -f .env.staging craco build",
     "build:prod": "env-cmd -f .env.production craco build",
     "test": "react-app-rewired test --env=jsdom",
     "eject": "react-app-rewired eject"
@@ -126,6 +126,7 @@
     "babel-plugin-module-resolver": "^4.1.0",
     "generate-react-cli": "^7.0.5",
     "html-webpack-plugin": "^5.5.0",
+    "npm-run-all": "^4.1.5",
     "react-app-rewire-alias": "^1.1.5",
     "react-app-rewired": "^2.1.8",
     "redux-devtools-extension": "^2.13.8",

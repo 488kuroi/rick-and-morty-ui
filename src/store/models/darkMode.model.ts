@@ -1,7 +1,7 @@
-import CredentialsManager from '@src/core/utils/credentialsmanager';
+import StorageManager from '@src/core/utils/storage-manager';
 const STORAGE_KEY = process.env.REACT_APP_STORAGE_KEY;
 
-const OLD_MODE: DarkMode|boolean = CredentialsManager.retrieveItem(`${STORAGE_KEY}_darkMode`) || false;
+const OLD_MODE: DarkMode|boolean = StorageManager.retrieveItem(`${STORAGE_KEY}_darkMode`) || false;
 
 export interface DarkMode {
     isDark : boolean;

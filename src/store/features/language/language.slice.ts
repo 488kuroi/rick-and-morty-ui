@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 import i18next from '@translations/index';
 import { LANGUAGE } from '@models';
-import CredentialsManager from '@src/core/utils/credentialsmanager';
+import StorageManager from '@src/core/utils/storage-manager';
 const STORAGE_KEY = process.env.REACT_APP_STORAGE_KEY;
 
 export const languageSlice = createSlice({
-  name: 'darkMode',
+  name: 'language',
   initialState: LANGUAGE.initialState,
   reducers: {
     setLanguage: (state, payload) => {
@@ -15,7 +15,7 @@ export const languageSlice = createSlice({
       const newState = {
         language: payload.payload,
       };
-      CredentialsManager.storeItem(`${STORAGE_KEY}_language`, newState);
+      StorageManager.storeItem(`${STORAGE_KEY}_language`, newState);
       return newState;
     }
   }

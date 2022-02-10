@@ -24,7 +24,7 @@ module.exports = {
         '@services'            : path.resolve(__dirname, 'src/core/services/*' ),
         '@http'                : path.resolve(__dirname, 'src/core/services/http/index.ts' ),
         '@utils'               : path.resolve(__dirname, 'src/core/utils/index.ts' ),
-        '@credentialsmanager'  : path.resolve(__dirname, 'src/core/utils/credentialsmanager/index.ts' ),
+        '@storagemanager'      : path.resolve(__dirname, 'src/core/utils/storage-manager/index.ts' ),
         '@repositories'        : path.resolve(__dirname, 'src/core/repositories' ),
         '@translations'        : path.resolve(__dirname, 'src/translations' ),
         '@mocks'               : path.resolve(__dirname, 'src/assets/mocks/index.ts' ),

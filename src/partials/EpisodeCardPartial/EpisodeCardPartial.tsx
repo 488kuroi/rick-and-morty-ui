@@ -11,12 +11,12 @@ import {
   CardContent,
 } from '@material-ui/core';
 
-const LocationCardPratial: FC<CardPartialProps> = ({ data = null }) => {
+const EpisodeCardPartial: FC<CardPartialProps> = ({ data = null }) => {
 
   const { t } = useTranslation('common');
 
   return (
-    <div data-testid="LocationCardPratial">
+    <div data-testid="EpisodeCardPartial">
     <Card>
       <CardActionArea>
         <CardContent>
@@ -30,7 +30,7 @@ const LocationCardPratial: FC<CardPartialProps> = ({ data = null }) => {
             {t('episode')}: {data?.episode || ''} - {t('air_date')}: {data?.air_date || ''}
           </Typography>
           <Typography variant="body2">
-            {t('characters_involved_num')}: {data?.characters.length || ''}
+            {t('characters_involved_num')}: {data?.characters?.length || 0}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -39,4 +39,4 @@ const LocationCardPratial: FC<CardPartialProps> = ({ data = null }) => {
   )
 };
 
-export default LocationCardPratial;
+export default EpisodeCardPartial;

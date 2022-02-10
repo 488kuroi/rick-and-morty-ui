@@ -22,7 +22,7 @@
         "@services/*"           : [ "src/core/services/*" ],
         "@http"                 : [ "src/core/services/http/index.ts" ],
         "@utils"                : [ "src/core/utils/index.ts" ],
-        "@credentialsmanager"   : [ "src/core/utils/credentialsmanager/index.ts" ],
+        "@storagemanager"       : [ "src/core/utils/storage-manager/index.ts" ],
         "@repositories/*"       : [ "src/core/repositories/*" ],
         "@translations/*"       : [ "src/translations/*" ],
         "@mocks"                : [ "src/assets/mocks/index.ts" ]
